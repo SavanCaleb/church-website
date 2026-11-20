@@ -4,46 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events – Freedom Worship Center Würzburg</title>
-  <meta name="description" content="Kommende Veranstaltungen im Freedom Worship Center Würzburg.">
-  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="Veranstaltungen im Freedom Worship Center Würzburg.">
+  <meta name="theme-color" content="#2b2c7c">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body data-title-en="Events – Freedom Worship Center Würzburg">
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Zum Inhalt springen</a>
   <header id="site-header" class="site-header"></header>
 
   <main id="main">
     <section class="hero page-hero">
-      <div class="hero-media" aria-hidden="true"><div class="hero-glow"></div></div>
-      <div class="hero-grain" aria-hidden="true"></div>
-      <div class="container">
-        <span class="eyebrow" data-i18n="ev.eyebrow">Events</span>
-        <h1 data-i18n="ev.title">Was kommt.</h1>
-        <p class="lead" data-i18n="ev.lead">Besondere Gottesdienste, Gebetsabende, Feste und Begegnungen. Sei dabei – und bring jemanden mit.</p>
+      <div class="container reveal">
+        <span class="eyebrow">Events</span>
+        <h1 data-i18n="ev.title">Was als Nächstes kommt.</h1>
+        <p class="lead mt-2" data-i18n="ev.lead">Besondere Gottesdienste, Youth Nights und Gemeinschaft. Sei dabei – und bring jemanden mit.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="event-list reveal" data-events></div>
-        <p class="muted mt-4" data-events-empty hidden data-i18n="ev.empty">Aktuell sind keine Events geplant. Schau bald wieder vorbei!</p>
+        <div class="notice reveal" data-events-empty hidden>
+          <h2 data-i18n="ev.empty.title">Aktuelle Termine auf Social Media.</h2>
+          <p class="lead" data-i18n="ev.empty.lead">Neue Events kündigen wir auf Instagram und Facebook an. Folge uns, damit du nichts verpasst.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" data-href="instagramUrl" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-ghost" data-href="facebookUrl" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section section-navy">
       <div class="container">
-        <div class="cta-band reveal">
-          <h2 data-i18n="ev.cta.title">Nichts verpassen.</h2>
-          <p class="lead mt-2" data-i18n="ev.cta.lead">Folge uns auf Instagram und YouTube, um immer auf dem neuesten Stand zu sein.</p>
-          <div class="btn-row mt-4">
-            <a class="btn btn-dark" data-href="instagramUrl" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn btn-ghost" data-href="youtubeUrl" target="_blank" rel="noopener">YouTube</a>
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="ev.weekly.eyebrow">Jede Woche</span>
+            <h2 data-i18n="ev.weekly.title">Regelmäßige Treffen.</h2>
           </div>
         </div>
+        <div class="times reveal" data-services></div>
       </div>
     </section>
   </main>

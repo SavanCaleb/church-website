@@ -1,41 +1,39 @@
 # Freedom Worship Center Würzburg – Website
 
-A fast, modern, bilingual (Deutsch / English) church website. Plain HTML, CSS and JavaScript:
-no build step and no frameworks, so it can be hosted for free on GitHub Pages, Netlify or Cloudflare Pages.
+A clean, bilingual (Deutsch / English) website for Freedom Worship Center Würzburg – *Where Freedom Reigns*.
+Plain HTML, CSS and JavaScript: no build step, hosted for free on GitHub Pages.
 
 ## Pages
 
 | File | Page |
 |---|---|
-| `index.html` | Home: hero, service times, next steps, latest message, ministries, prayer request |
-| `about.html` | Über uns: story, vision and values, beliefs, leadership team |
-| `visit.html` | Besuch planen: times, address and map, what to expect, FAQ, "I'm coming" form |
-| `watch.html` | Predigten: YouTube embed and sermon series |
-| `ministries.html` | Gemeindeleben: kids, youth, life groups, other ministries, serving |
+| `index.html` | Home: hero with latest sermon, service times, who we are, latest sermons, next steps, social links, prayer |
+| `about.html` | Über uns: who we are, values, beliefs, leadership |
+| `visit.html` | Besuch planen: times, address and map, parking, language, accessibility, FAQ |
+| `watch.html` | Predigten: YouTube player (latest uploads, automatic) and sermon grid from `assets/js/sermons.js` |
+| `ministries.html` | Gemeindeleben: youth, worship, evening gatherings, international, serving |
 | `events.html` | Events: generated from `assets/js/events.js` (past events hide automatically) |
-| `give.html` | Spenden: bank details with copy button, optional PayPal |
-| `contact.html` | Kontakt: contact form, map, details |
+| `give.html` | Spenden: bank details (shown once filled in), optional PayPal |
+| `contact.html` | Kontakt: address, phone, map; contact form appears once an email or Formspree endpoint is set |
 | `impressum.html`, `datenschutz.html` | Legal pages (required in Germany) – **templates, fill in and have them checked** |
 
 ## Updating content (no coding needed)
 
 1. **Church details** (address, email, phone, service times, social links, YouTube, bank details):
-   edit `assets/js/config.js`. Everything marked `TODO` is a placeholder.
-2. **Events**: edit `assets/js/events.js`.
+   edit `assets/js/config.js`. Empty values are hidden on the site.
+2. **Events**: edit `assets/js/events.js`. While it's empty, the Events page points to Instagram/Facebook.
+   **Sermons**: add new YouTube videos to the top of `assets/js/sermons.js` (video ID, date, title, speaker).
 3. **German text**: edit it directly in the `.html` files.
 4. **English text**: edit `assets/js/i18n-en.js` (same key as the `data-i18n="…"` attribute in the HTML).
-5. **Photos**: put images in `assets/img/` and replace the gradient placeholders – look for
-   `<!-- <img src="assets/img/…"> -->` comments in the HTML. For a video background on the home page,
-   add `assets/img/hero.mp4` and uncomment the `<video>` line in `index.html`.
+5. **Photos**: team photos can replace the initials on `about.html` (see the comment there). Sermon images come from YouTube automatically.
 6. **Colors and fonts**: change the variables at the top of `assets/css/styles.css`.
 
 ### Contact form
 By default the form opens the visitor's email program. To receive messages directly,
 create a free form at [formspree.io](https://formspree.io) and paste its endpoint into `formEndpoint` in `config.js`.
 
-### YouTube
-Paste your channel ID (starts with `UC…`, found in YouTube Studio → Settings → Channel → Advanced) into
-`youtubeChannelId` in `config.js`. The site then shows your latest uploads automatically.
+### Email and bank details
+The church email and bank details are empty in `config.js`, so the site hides them and shows the phone number instead. Fill them in and they appear automatically.
 
 ## Run locally
 
