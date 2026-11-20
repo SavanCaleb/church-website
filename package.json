@@ -1,0 +1,9 @@
+{
+  "name": "freedom-worship-center-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website of Freedom Worship Center Würzburg",
+  "scripts": {
+    "start": "node scripts/serve.mjs"
+  }
+}

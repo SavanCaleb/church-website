@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Freedom Worship Center Würzburg</title>
+  <meta name="description" content="Kontakt zum Freedom Worship Center Würzburg: Adresse, E-Mail, Telefon, Gebetsanliegen.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-title-en="Contact – Freedom Worship Center Würzburg">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="hero-media" aria-hidden="true"><div class="hero-glow"></div></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="container">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Kontakt</span>
+        <h1 data-i18n="contact.title">Lass uns reden.</h1>
+        <p class="lead" data-i18n="contact.lead">Fragen, Gebetsanliegen oder einfach Hallo sagen – wir freuen uns, von dir zu hören.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:start">
+        <div class="reveal">
+          <ul class="info-list">
+            <li>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><strong data-i18n="visit.addr">Adresse</strong><span data-address></span></div>
+            </li>
+            <li>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+              <div><strong>E-Mail</strong><a data-href="email" data-config="email"></a></div>
+            </li>
+            <li>
+              <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+              <div><strong data-i18n="contact.phone">Telefon</strong><a data-href="phone" data-config="phone"></a></div>
+            </li>
+          </ul>
+          <div class="map-frame mt-4" data-map></div>
+        </div>
+
+        <form class="form reveal" data-contact>
+          <div class="form-row">
+            <div class="field"><label for="c-name" data-i18n="form.name">Name</label><input id="c-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="c-email" data-i18n="form.email">E-Mail</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
+          </div>
+          <div class="field">
+            <label for="c-topic" data-i18n="form.topic">Worum geht es?</label>
+            <select id="c-topic" name="topic">
+              <option value="allgemein" data-i18n="form.t.general">Allgemeine Frage</option>
+              <option value="gebet" data-i18n="form.t.prayer">Gebetsanliegen</option>
+              <option value="taufe" data-i18n="form.t.baptism">Taufe</option>
+              <option value="hauskreis" data-i18n="form.t.group">Hauskreis</option>
+              <option value="mitarbeit" data-i18n="form.t.serve">Mitarbeit</option>
+              <option value="seelsorge" data-i18n="form.t.care">Seelsorge / Gespräch</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-msg" data-i18n="form.msg2">Nachricht</label><textarea id="c-msg" name="message" required></textarea></div>
+          <div class="visually-hidden"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <p class="form-note" data-i18n="form.privacy">Deine Angaben behandeln wir vertraulich und nutzen sie nur, um dir zu antworten. Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+          <div><button class="btn btn-primary" type="submit" data-i18n="form.send">Absenden</button></div>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n-en.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
