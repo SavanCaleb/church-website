@@ -167,7 +167,7 @@ body.menu-open .menu-overlay { opacity: 1; visibility: visible; transform: none;
 
 /* Featured video card in hero */
 .feature { border-radius: var(--radius-lg); overflow: hidden; background: #fff; box-shadow: var(--shadow-lg); }
-.feature-media { position: relative; aspect-ratio: 16 / 9; background: var(--navy-deep); }
+.feature-media { display: block; position: relative; aspect-ratio: 16 / 9; background: var(--navy-deep); }
 .feature-media img { width: 100%; height: 100%; object-fit: cover; }
 .feature-media .play-badge { position: absolute; inset: 0; margin: auto; }
 .feature-body { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
