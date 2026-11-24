@@ -49,12 +49,12 @@ npm start
 
 Then open http://localhost:5173.
 
-## Publish on GitHub Pages (free)
+## Live site
 
-1. Push this repository to GitHub.
-2. In the repository: **Settings → Pages → Source: Deploy from a branch → `main` / root**.
-3. To use `freedomworshipcenterwue.de`: add the domain under **Settings → Pages → Custom domain**,
-   then at your domain provider point the DNS to GitHub Pages
-   (A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   and a CNAME for `www` → `<your-github-username>.github.io`).
-   Only switch the DNS once the new site is ready – this replaces the current Wix site.
+**https://savancaleb.github.io/** – hosted for free on GitHub Pages from the `main` branch of
+`SavanCaleb/savancaleb.github.io`. Every push to `main` is live within about a minute.
+
+### Using a custom domain later (optional)
+Add the domain under **Settings → Pages → Custom domain**, then at the domain provider set
+A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+and a CNAME for `www` → `savancaleb.github.io`.
