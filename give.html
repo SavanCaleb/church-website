@@ -36,12 +36,13 @@
         <div class="give-box reveal" data-give-details hidden>
           <h3 data-i18n="give.bank">Bankverbindung</h3>
           <dl>
-            <dt data-i18n="give.holder">Empfänger</dt><dd data-config="give.accountHolder"></dd>
+            <div style="display:contents" data-optional><dt data-i18n="give.holder">Empfänger</dt><dd data-config="give.accountHolder"></dd></div>
             <dt>IBAN</dt><dd><span id="iban" data-config="give.iban"></span> <button class="copy-btn" type="button" data-copy="#iban" data-i18n="give.copy">Kopieren</button></dd>
-            <dt>BIC</dt><dd data-config="give.bic"></dd>
-            <dt>Bank</dt><dd data-config="give.bank"></dd>
+            <div style="display:contents" data-optional><dt>BIC</dt><dd data-config="give.bic"></dd></div>
+            <div style="display:contents" data-optional><dt>Bank</dt><dd data-config="give.bank"></dd></div>
             <dt data-i18n="give.ref">Zweck</dt><dd data-i18n="give.refv">Spende</dd>
           </dl>
+          <p class="muted mt-2" data-i18n="give.mission">Für Missionsspenden gib bitte das Projekt im Verwendungszweck an, z.&nbsp;B. „Mission“ oder „MEMP“.</p>
         </div>
         <div class="give-box reveal" data-give-empty>
           <h3 data-i18n="give.bank">Bankverbindung</h3>
@@ -61,8 +62,8 @@
         </div>
         <div class="grid grid-3">
           <div class="card reveal"><h3 data-i18n="give.i1.t">Gottesdienste</h3><p data-i18n="give.i1.d">Räume, Technik und Livestream – damit jeder dabei sein kann.</p></div>
-          <div class="card reveal"><h3 data-i18n="give.i2.t">Nächste Generation</h3><p data-i18n="give.i2.d">Jugendarbeit, Youth Nights und Material für junge Menschen.</p></div>
-          <div class="card reveal"><h3 data-i18n="give.i3.t">Würzburg &amp; Welt</h3><p data-i18n="give.i3.d">Hilfe für Menschen in Not und Unterstützung von Mission.</p></div>
+          <div class="card reveal"><h3 data-i18n="give.i2.t">Nächste Generation</h3><p data-i18n="give.i2.d">Kinderkirche, Chosen Generation und Material für die nächste Generation.</p></div>
+          <div class="card reveal"><h3 data-i18n="give.i3.t">Würzburg &amp; Welt</h3><p data-i18n="give.i3.d">Missionswerke auf den Philippinen, in Uganda, Israel und weltweit.</p></div>
         </div>
       </div>
     </section>

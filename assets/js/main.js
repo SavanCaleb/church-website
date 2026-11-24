@@ -29,7 +29,7 @@
     { href: "about.html", de: "Über uns", en: "About" },
     { href: "visit.html", de: "Besuch planen", en: "Plan a Visit" },
     { href: "watch.html", de: "Predigten", en: "Sermons" },
-    { href: "ministries.html", de: "Gemeindeleben", en: "Ministries" },
+    { href: "ministries.html", de: "Dienste", en: "Ministries" },
     { href: "events.html", de: "Events", en: "Events" },
     { href: "give.html", de: "Spenden", en: "Give" },
     { href: "contact.html", de: "Kontakt", en: "Contact" }
@@ -40,6 +40,7 @@
     yt: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg>',
     ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
     fb: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.2H8v3.6h2.6V22H14v-9.9h2.7l.4-3.6H14Z"/></svg>',
+    tt: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.4V6.6a4.5 4.5 0 0 1-4.4-4.6Z"/></svg>',
     play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
   };
   window.FWC_ICONS = ICONS;
@@ -55,6 +56,7 @@
     if (S.youtubeUrl) out += '<a href="' + S.youtubeUrl + '" target="_blank" rel="noopener" aria-label="YouTube">' + ICONS.yt + "</a>";
     if (S.instagramUrl) out += '<a href="' + S.instagramUrl + '" target="_blank" rel="noopener" aria-label="Instagram">' + ICONS.ig + "</a>";
     if (S.facebookUrl) out += '<a href="' + S.facebookUrl + '" target="_blank" rel="noopener" aria-label="Facebook">' + ICONS.fb + "</a>";
+    if (S.tiktokUrl) out += '<a href="' + S.tiktokUrl + '" target="_blank" rel="noopener" aria-label="TikTok">' + ICONS.tt + "</a>";
     return out;
   }
   function contactLines() {

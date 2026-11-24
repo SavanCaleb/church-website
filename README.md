@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript: no build step, hosted for free on GitHub Pages.
 | `about.html` | Über uns: who we are, values, beliefs, leadership |
 | `visit.html` | Besuch planen: times, address and map, parking, language, accessibility, FAQ |
 | `watch.html` | Predigten: YouTube player (latest uploads, automatic) and sermon grid from `assets/js/sermons.js` |
-| `ministries.html` | Gemeindeleben: youth, worship, evening gatherings, international, serving |
+| `ministries.html` | Dienste: kids church, Chosen Generation, worship, Team F, healing, women/men, street evangelism |
 | `events.html` | Events: generated from `assets/js/events.js` (past events hide automatically) |
 | `give.html` | Spenden: bank details (shown once filled in), optional PayPal |
 | `contact.html` | Kontakt: address, phone, map; contact form appears once an email or Formspree endpoint is set |

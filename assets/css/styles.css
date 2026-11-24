@@ -339,3 +339,78 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border
 .prose h3 { margin: 36px 0 10px; }
 .prose p { color: var(--ink-2); }
 [hidden] { display: none !important; }
+
+/* ==========================================================================
+   Photo components (real church photos in assets/img/photos)
+   ========================================================================== */
+@media (min-width: 760px) { .times { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1060px) { .times { grid-template-columns: repeat(4, 1fr); } }
+
+/* Full-bleed photo hero (home page) */
+.hero-photo { position: relative; min-height: min(88vh, 780px); display: flex; align-items: flex-end; padding: clamp(80px, 12vw, 140px) 0 clamp(48px, 7vw, 88px); background: var(--navy-deep); color: #fff; overflow: hidden; isolation: isolate; }
+.hero-photo .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; z-index: -2; }
+.hero-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(26,27,82,.25) 0%, rgba(26,27,82,.45) 45%, rgba(20,21,60,.92) 100%); }
+.hero-photo h1 { color: #fff; font-size: clamp(2.8rem, 8vw, 6rem); max-width: 13ch; }
+.hero-photo h1 .accent { color: #ff6b73; }
+.hero-photo .lead { color: rgba(255,255,255,.88); margin-top: 18px; }
+.hero-photo .eyebrow { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.35); }
+.hero-photo .btn-row { margin-top: 28px; }
+.hero-photo .hero-meta { color: rgba(255,255,255,.85); }
+.hero-photo .hero-meta strong { color: #fff; }
+.hero-photo .hero-meta svg { color: #ff8a90; }
+
+/* Page hero with photo */
+.page-hero.has-photo { position: relative; color: #fff; background: var(--navy-deep); isolation: isolate; padding: clamp(80px, 11vw, 140px) 0 clamp(48px, 7vw, 80px); }
+.page-hero.has-photo .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.page-hero.has-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(26,27,82,.35), rgba(20,21,60,.88)); }
+.page-hero.has-photo::before { display: none; }
+.page-hero.has-photo h1 { color: #fff; }
+.page-hero.has-photo .lead { color: rgba(255,255,255,.88); }
+.page-hero.has-photo .eyebrow { color: #fff; }
+.page-hero.has-photo .hero-meta, .page-hero.has-photo .hero-meta strong { color: #fff; }
+
+.photo { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3; background: var(--bg-soft); box-shadow: var(--shadow); margin: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo.wide { aspect-ratio: 16 / 9; }
+.photo.tall { aspect-ratio: 4 / 5; }
+.photo figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255,255,255,.92); color: var(--ink); font-size: .8rem; font-weight: 700; padding: 5px 10px; border-radius: 999px; }
+
+.card-photo { margin: -26px -26px 8px; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.card-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+a.card:hover .card-photo img { transform: scale(1.04); }
+
+/* Gallery */
+.gallery { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+@media (min-width: 800px) { .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 16px; } }
+.gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--bg-soft); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.gallery figure:hover img { transform: scale(1.05); }
+.gallery .big { grid-column: span 2; grid-row: span 2; }
+.gallery .wide { grid-column: span 2; }
+
+/* Team with photos */
+.team-card { padding: 0; overflow: hidden; gap: 0; }
+.team-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.team-card .body { padding: 18px 20px 22px; }
+.team-card .role { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.team-card h3 { margin: 4px 0 8px; }
+.team-card p { font-size: .93rem; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 26px 26px; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 4px #fff; }
+.timeline .year { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--navy); }
+.timeline p { margin: 2px 0 0; color: var(--ink-2); }
+
+/* Lists */
+.check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.check-list li { position: relative; padding-left: 32px; color: var(--ink-2); }
+.check-list li::before { content: ""; position: absolute; left: 0; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: rgba(210,38,48,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d22630' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.partner-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.partner-list li { padding: 8px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 600; font-size: .92rem; }
+.quote { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.3; color: var(--navy); border-left: 4px solid var(--red); padding-left: 20px; margin: 0; }
+.quote cite { display: block; margin-top: 10px; font-family: var(--font-body); font-style: normal; font-size: .9rem; font-weight: 600; color: var(--ink-3); }
+@media (min-width: 1000px) { .social-cards.four { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) and (max-width: 999px) { .social-cards.four { grid-template-columns: repeat(2, 1fr); } }
+.social-card .tt { background: #111; }
