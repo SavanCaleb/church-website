@@ -2,18 +2,19 @@
 <html lang="de" class="no-js">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Freedom Worship Center Würzburg – Where Freedom Reigns</title>
   <meta name="description" content="Freedom Worship Center Würzburg: internationale christliche Kirche in der Ohmstraße 8. Gottesdienst sonntags um 10 Uhr auf Englisch und Deutsch.">
   <meta property="og:title" content="Freedom Worship Center Würzburg">
   <meta property="og:description" content="Internationale christliche Kirche in Würzburg – Gottesdienst sonntags um 10 Uhr auf Englisch und Deutsch.">
   <meta property="og:image" content="assets/img/photos/worship-hands.jpg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#2b2c7c">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body data-title-en="Freedom Worship Center Würzburg – Where Freedom Reigns">
@@ -21,136 +22,159 @@
   <header id="site-header" class="site-header"></header>
 
   <main id="main">
+    <!-- HERO: photos rotate every few seconds. Add/remove <img> lines to change them. -->
     <section class="hero-photo">
-      <img class="bg" src="assets/img/photos/worship-hands.jpg" alt="" fetchpriority="high">
-      <div class="container">
-        <span class="eyebrow" data-i18n="home.eyebrow">Willkommen im Freedom Worship Center</span>
-        <h1>Where Freedom <span class="accent">Reigns.</span></h1>
-        <p class="lead" data-i18n="home.lead">Eine internationale christliche Kirche in Würzburg, in der Menschen aus vielen Ländern und Kulturen ein Zuhause haben. Erlebe mit uns die Anbetung, das Wort und die Gegenwart und Kraft des Heiligen Geistes.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="visit.html" data-i18n="home.cta1">Besuch planen</a>
-          <a class="btn btn-outline-light" data-href="youtubeLiveUrl" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            <span data-i18n="home.cta2">Online mitfeiern</span>
-          </a>
+      <div class="hero-slides" aria-hidden="true">
+        <img src="assets/img/photos/worship-hands.jpg" alt="" fetchpriority="high">
+        <img src="assets/img/photos/church-group.jpg" alt="">
+        <img src="assets/img/photos/baptism-river-2.jpg" alt="">
+        <img src="assets/img/photos/street-evangelism.jpg" alt="">
+      </div>
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow" data-i18n="home.eyebrow">Willkommen im Freedom Worship Center</span>
+          <h1>Where Freedom Reigns.</h1>
+          <p class="lead" data-i18n="home.lead">Eine internationale Kirche in Würzburg – ein Zuhause für Menschen aus vielen Ländern und Kulturen.</p>
+          <div class="hero-meta">
+            <span data-countdown></span>
+          </div>
         </div>
-        <div class="hero-meta">
-          <span data-countdown></span>
-          <a data-href="maps" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span><span data-config="street"></span>, <span data-config="town"></span></span>
-          </a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="visit.html" data-i18n="home.cta1">Besuch planen</a>
+          <a class="btn" data-href="youtubeLiveUrl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-i18n="home.cta2">Online mitfeiern</span></a>
+        </div>
+      </div>
+      <div class="hero-dots"></div>
+    </section>
+
+    <!-- WAYS TO JOIN -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 data-i18n="home.ways.title">Finde deinen Weg zu uns.</h2>
+          <p class="lead" data-i18n="home.ways.lead">Ob vor Ort, online oder unter der Woche – es gibt viele Möglichkeiten, Teil der Familie zu sein.</p>
+        </div>
+        <div class="ways reveal">
+          <div class="way">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+            <h3 data-i18n="home.w1.t">Vor Ort</h3>
+            <p data-i18n="home.w1.d">Sonntags um 10 Uhr in der Ohmstraße 8 – auf Englisch und Deutsch.</p>
+            <a class="link-arrow" href="visit.html" data-i18n="home.w1.l">Besuch planen</a>
+          </div>
+          <div class="way">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3z" fill="currentColor"/><path d="M8 22h8"/></svg>
+            <h3 data-i18n="home.w2.t">Livestream</h3>
+            <p data-i18n="home.w2.d">Feiere den Gottesdienst live auf YouTube mit – von überall.</p>
+            <a class="link-arrow" href="watch.html" data-i18n="home.w2.l">Jetzt ansehen</a>
+          </div>
+          <div class="way">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <h3 data-i18n="home.w3.t">Unter der Woche</h3>
+            <p data-i18n="home.w3.d">Gebet am Montag, Jugendgebet am Dienstag, Bibelstudium am Mittwoch.</p>
+            <a class="link-arrow" href="events.html" data-i18n="home.w3.l">Alle Termine</a>
+          </div>
+          <div class="way">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+            <h3 data-i18n="home.w4.t">Gebet</h3>
+            <p data-i18n="home.w4.d">Teile dein Anliegen – wir beten vertraulich mit dir und für dich.</p>
+            <a class="link-arrow" href="contact.html?topic=gebet" data-i18n="home.w4.l">Gebet anfragen</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
+    <!-- DISCOVER (swipeable) -->
+    <section class="section section-soft" data-carousel>
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow" data-i18n="home.times.eyebrow">Termine</span>
-            <h2 data-i18n="home.times.title">Komm vorbei.</h2>
+            <h2 data-i18n="home.disc.title">Entdecke mehr.</h2>
+            <p class="lead" data-i18n="home.disc.lead">Taufen, Einsätze in der Stadt, Missionen und vieles mehr – sieh, was Gott bei uns tut.</p>
           </div>
+          <div class="carousel-nav"><button type="button" data-prev aria-label="Zurück">‹</button><button type="button" data-next aria-label="Weiter">›</button></div>
+        </div>
+      </div>
+      <div class="carousel-track reveal">
+        <a class="promo" href="contact.html?topic=allgemein"><div class="media"><img src="assets/img/photos/baptism-river.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p1.t">Taufe</h3><p data-i18n="home.p1.d">Bereit für den nächsten Schritt? Sprich uns an.</p></div></a>
+        <a class="promo" href="ministries.html#more"><div class="media"><img src="assets/img/photos/street-evangelism.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p2.t">Straßenevangelisation</h3><p data-i18n="home.p2.d">Einmal im Monat teilen wir die gute Nachricht in der Stadt.</p></div></a>
+        <a class="promo" href="about.html#missions"><div class="media"><img src="assets/img/photos/missions.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p3.t">Missionen</h3><p data-i18n="home.p3.d">Unsere Partner auf den Philippinen, in Uganda und weltweit.</p></div></a>
+        <a class="promo" href="visit.html"><div class="media"><img src="assets/img/photos/fellowship.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p4.t">Kaffeezeit</h3><p data-i18n="home.p4.d">Nach dem Gottesdienst bleiben wir gern noch zusammen.</p></div></a>
+        <a class="promo" href="about.html#team"><div class="media"><img src="assets/img/photos/welcome-team.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p5.t">Unser Team</h3><p data-i18n="home.p5.d">Lerne die Menschen hinter dem FWC kennen.</p></div></a>
+        <a class="promo" href="about.html"><div class="media"><img src="assets/img/photos/building.jpg" alt="" loading="lazy"></div><div class="body"><h3 data-i18n="home.p6.t">Seit 1974</h3><p data-i18n="home.p6.d">Unsere Geschichte – von Gerbrunn in die Ohmstraße.</p></div></a>
+      </div>
+      <div class="carousel-dots" aria-hidden="true"></div>
+    </section>
+
+    <!-- SERMONS (swipeable) -->
+    <section class="section" data-carousel>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 data-i18n="home.watch.title">Neueste Predigten.</h2>
+            <p class="lead" data-i18n="home.watch.lead">Verpasst? Schau dir jede Botschaft jederzeit an.</p>
+          </div>
+          <div class="carousel-nav"><button type="button" data-prev aria-label="Zurück">‹</button><button type="button" data-next aria-label="Weiter">›</button></div>
+        </div>
+      </div>
+      <div class="carousel-track reveal" data-sermons="8"></div>
+      <div class="carousel-dots" aria-hidden="true"></div>
+      <div class="container mt-4"><a class="btn" href="watch.html" data-i18n="home.watch.link">Alle Predigten</a></div>
+    </section>
+
+    <!-- MINISTRIES -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 data-i18n="home.min.title">Ein Platz für dich und deine Familie.</h2>
+          <p class="lead" data-i18n="home.min.lead">Wachse im Glauben, finde Freunde und entdecke, wo du dienen kannst.</p>
+        </div>
+        <div class="mcards">
+          <a class="mcard c-blue reveal" href="ministries.html#youth"><img src="assets/img/photos/youth.jpg" alt="" loading="lazy"><span class="kicker">Chosen Generation</span><h3 data-i18n="home.m1">Junge Menschen mit Feuer für Jesus.</h3><span class="btn" data-i18n="more">Mehr erfahren</span></a>
+          <a class="mcard c-red reveal" href="ministries.html#kids"><img src="assets/img/photos/kids-outdoor.jpg" alt="" loading="lazy"><span class="kicker" data-i18n="home.m2.k">Kinderkirche</span><h3 data-i18n="home.m2">Kinder entdecken Gottes Liebe.</h3><span class="btn" data-i18n="more">Mehr erfahren</span></a>
+          <a class="mcard c-teal reveal" href="ministries.html#worship"><img src="assets/img/photos/worship-team.jpg" alt="" loading="lazy"><span class="kicker" data-i18n="home.m3.k">Lobpreis</span><h3 data-i18n="home.m3">Im Lobpreis liegt Macht.</h3><span class="btn" data-i18n="more">Mehr erfahren</span></a>
+          <a class="mcard c-gold reveal" href="ministries.html#family"><img src="assets/img/photos/family.jpg" alt="" loading="lazy"><span class="kicker">Team F</span><h3 data-i18n="home.m4">Starke Familien, starke Gemeinschaft.</h3><span class="btn" data-i18n="more">Mehr erfahren</span></a>
+          <a class="mcard c-purple reveal" href="ministries.html#healing"><img src="assets/img/photos/prayer.jpg" alt="" loading="lazy"><span class="kicker" data-i18n="home.m5.k">Heilung &amp; Befreiung</span><h3 data-i18n="home.m5">Wir glauben an die Kraft des Gebets.</h3><span class="btn" data-i18n="more">Mehr erfahren</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="home.times.title">Wann wir uns treffen.</h2>
           <a class="link-arrow" href="visit.html" data-i18n="home.times.link">Was dich erwartet</a>
         </div>
         <div class="times reveal" data-services></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container split">
-        <div class="reveal">
-          <span class="eyebrow" data-i18n="home.about.eyebrow">Wer wir sind</span>
-          <h2 data-i18n="home.about.title">Eine echte Familie Gottes.</h2>
-          <p class="lead mt-2" data-i18n="home.about.lead">Das Freedom Worship Center bietet eine Gemeinschaft, in der Menschen im Herrn wachsen, ihre Bestimmung entdecken und sich an Gottes Mission beteiligen können. Komm gerne vorbei und werde Teil von etwas Besonderem.</p>
-          <ul class="check-list mt-4">
-            <li data-i18n="home.about.l1">Gottesdienste auf Englisch und Deutsch</li>
-            <li data-i18n="home.about.l2">Kinderkirche jeden Sonntag</li>
-            <li data-i18n="home.about.l3">Kaffeezeit und Gemeinschaft nach dem Gottesdienst</li>
-          </ul>
-          <div class="btn-row mt-4"><a class="btn btn-navy" href="about.html" data-i18n="home.about.cta">Mehr über uns</a></div>
-        </div>
-        <figure class="photo reveal"><img src="assets/img/photos/church-family.jpg" alt="Die Gemeinde des Freedom Worship Center" loading="lazy"></figure>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow" data-i18n="home.watch.eyebrow">Predigten</span>
-            <h2 data-i18n="home.watch.title">Neueste Botschaften.</h2>
-          </div>
-          <a class="link-arrow" href="watch.html" data-i18n="home.watch.link">Alle Predigten</a>
-        </div>
-        <div class="grid grid-3 reveal" data-sermons="3"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow" data-i18n="home.min.eyebrow">Dienste</span>
-            <h2 data-i18n="home.min.title">Für jede Generation.</h2>
-          </div>
-          <a class="link-arrow" href="ministries.html" data-i18n="home.min.link">Alle Dienste</a>
-        </div>
-        <div class="grid grid-4">
-          <a class="card reveal" href="ministries.html#kids">
-            <div class="card-photo"><img src="assets/img/photos/kids-room.jpg" alt="" loading="lazy"></div>
-            <h3 data-i18n="home.min.1.t">Kinderkirche</h3>
-            <p data-i18n="home.min.1.d">Jeden Sonntag biblische Lektionen mit Spiel und Spaß.</p>
-          </a>
-          <a class="card reveal" href="ministries.html#youth">
-            <div class="card-photo"><img src="assets/img/photos/youth.jpg" alt="" loading="lazy"></div>
-            <h3>Chosen Generation</h3>
-            <p data-i18n="home.min.2.d">Junge Menschen mit Feuer für Jesus.</p>
-          </a>
-          <a class="card reveal" href="ministries.html#worship">
-            <div class="card-photo"><img src="assets/img/photos/worship-team.jpg" alt="" loading="lazy"></div>
-            <h3 data-i18n="home.min.3.t">Lobpreis</h3>
-            <p data-i18n="home.min.3.d">Im Lobpreis liegt Macht.</p>
-          </a>
-          <a class="card reveal" href="ministries.html#family">
-            <div class="card-photo"><img src="assets/img/photos/family.jpg" alt="" loading="lazy"></div>
-            <h3>Team F</h3>
-            <p data-i18n="home.min.4.d">Für Paare, Familien und Singles.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <!-- GALLERY -->
     <section class="section section-soft" id="gallery">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <span class="eyebrow" data-i18n="home.gal.eyebrow">Gemeindeleben</span>
-            <h2 data-i18n="home.gal.title">Einblicke.</h2>
-          </div>
+          <h2 data-i18n="home.gal.title">Einblicke.</h2>
           <a class="link-arrow" data-href="instagramUrl" target="_blank" rel="noopener" data-i18n="home.gal.link">Mehr auf Instagram</a>
         </div>
         <div class="gallery reveal">
-          <figure class="big"><img src="assets/img/photos/church-group.jpg" alt="Gemeinde beim Gruppenfoto" loading="lazy"></figure>
-          <figure><img src="assets/img/photos/baptism-river.jpg" alt="Taufe im Fluss" loading="lazy"></figure>
+          <figure class="big"><img src="assets/img/photos/church-family.jpg" alt="Die Gemeinde beim Gruppenfoto" loading="lazy"></figure>
+          <figure><img src="assets/img/photos/baptism-river-2.jpg" alt="Taufe im Fluss" loading="lazy"></figure>
           <figure><img src="assets/img/photos/worship-service.jpg" alt="Gottesdienst" loading="lazy"></figure>
-          <figure class="wide"><img src="assets/img/photos/street-evangelism.jpg" alt="Straßenevangelisation in Würzburg" loading="lazy"></figure>
-          <figure><img src="assets/img/photos/fellowship.jpg" alt="Gemeinschaft nach dem Gottesdienst" loading="lazy"></figure>
-          <figure><img src="assets/img/photos/baptism-river-2.jpg" alt="Taufe" loading="lazy"></figure>
-          <figure class="wide"><img src="assets/img/photos/missions.jpg" alt="Missionsarbeit" loading="lazy"></figure>
+          <figure class="wide"><img src="assets/img/photos/church-group.jpg" alt="Gemeinde" loading="lazy"></figure>
+          <figure><img src="assets/img/photos/kids-room.jpg" alt="Kinderraum" loading="lazy"></figure>
+          <figure><img src="assets/img/photos/missions-africa.jpg" alt="Missionseinsatz" loading="lazy"></figure>
+          <figure class="wide"><img src="assets/img/photos/worship-hands.jpg" alt="Lobpreis" loading="lazy"></figure>
         </div>
       </div>
     </section>
 
+    <!-- SOCIAL -->
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <span class="eyebrow" data-i18n="social.eyebrow">Bleib verbunden</span>
-            <h2 data-i18n="social.title">Folge uns.</h2>
-          </div>
+          <h2 data-i18n="social.title">Bleib verbunden.</h2>
         </div>
-        <div class="social-cards four reveal">
+        <div class="social-cards reveal">
           <a class="social-card" data-href="youtubeUrl" target="_blank" rel="noopener">
             <span class="icon yt"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg></span>
             <div><strong>YouTube</strong><span data-i18n="social.yt">Livestreams &amp; Predigten</span></div>
@@ -176,7 +200,7 @@
         <div class="cta-band reveal">
           <div>
             <h2 data-i18n="home.cta.title">Dürfen wir für dich beten?</h2>
-            <p class="lead" data-i18n="home.cta.lead">Wir glauben an die Kraft des Gebets. Was dich auch bewegt – melde dich bei uns, wir beten vertraulich mit dir und für dich.</p>
+            <p class="lead" data-i18n="home.cta.lead">Was dich auch bewegt – du musst es nicht allein tragen. Melde dich, wir beten vertraulich mit dir.</p>
           </div>
           <div class="btn-row">
             <a class="btn btn-light" href="contact.html?topic=gebet" data-i18n="home.cta.btn">Gebetsanliegen teilen</a>

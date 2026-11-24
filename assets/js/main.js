@@ -66,22 +66,76 @@
     return out;
   }
 
+  var QI = {
+    play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+    info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
+    people: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 1-4 3-4.5 2 .5 3 2.5 3 4.5"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+  };
+  var QUICK = [
+    { href: "watch.html", icon: "play", de: "Predigten", en: "Sermons" },
+    { href: "visit.html", icon: "pin", de: "Besuch", en: "Visit" },
+    { href: "about.html", icon: "info", de: "Über uns", en: "About" },
+    { href: "ministries.html", icon: "people", de: "Dienste", en: "Ministries" },
+    { href: "give.html", icon: "heart", de: "Spenden", en: "Give" },
+    { href: "events.html", icon: "cal", de: "Events", en: "Events" },
+    { href: "contact.html", icon: "chat", de: "Kontakt", en: "Contact" }
+  ];
+
+  function brandHtml() {
+    return '<img src="assets/img/logo-mark.png" width="300" height="300" alt="">' +
+      '<span class="brand-text">Freedom<small>Worship Center</small></span>';
+  }
+
+  function renderAnnouncement() {
+    var A = S.announcement;
+    var old = document.getElementById("announce");
+    if (!A || !A.title) { if (old) old.remove(); return; }
+    var key = "fwc-announce-" + pick(A.title);
+    try { if (localStorage.getItem(key) === "closed") { if (old) old.remove(); return; } } catch (e) {}
+    var bar = old || document.createElement("div");
+    bar.id = "announce";
+    bar.className = "announce";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", tr("Hinweis", "Announcement"));
+    bar.innerHTML = '<div class="container"><div class="text"><strong>' + esc(pick(A.title)) + "</strong>" + (A.text ? "<span class=\"sub\">" + esc(pick(A.text)) + "</span>" : "") + "</div>" +
+      (A.link ? '<a class="btn" href="' + esc(A.link) + '"' + (/^https?:/.test(A.link) ? ' target="_blank" rel="noopener"' : "") + ">" + esc(pick(A.button)) + "</a>" : "") +
+      '<button class="close" type="button" aria-label="' + tr("Hinweis schließen", "Close announcement") + '">×</button></div>';
+    if (!old) { var header = document.getElementById("site-header"); header.parentNode.insertBefore(bar, header); }
+    bar.querySelector(".close").addEventListener("click", function () {
+      try { localStorage.setItem(key, "closed"); } catch (e) {}
+      bar.remove();
+    });
+  }
+
   function renderChrome() {
+    renderAnnouncement();
     var header = document.getElementById("site-header");
+    var live = S.youtubeLiveUrl || S.youtubeUrl;
     if (header) {
       header.innerHTML =
         '<div class="container header-inner">' +
-          '<a class="brand" href="index.html"><img src="assets/img/logo.png" width="764" height="261" alt="Freedom Worship Center – Where Freedom Reigns"></a>' +
-          '<nav class="main-nav" aria-label="' + tr("Hauptnavigation", "Main navigation") + '"><ul>' + navLinks(NAV.slice(1)) + "</ul></nav>" +
+          '<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="' + tr("Menü öffnen", "Open menu") + '"><span></span></button>' +
+          '<a class="brand" href="index.html" aria-label="Freedom Worship Center – ' + tr("Startseite", "Home") + '">' + brandHtml() + "</a>" +
+          '<nav class="main-nav" aria-label="' + tr("Hauptnavigation", "Main navigation") + '"><ul>' +
+            navLinks(NAV.filter(function (n) { return n.href !== "index.html" && n.href !== "give.html"; })) + "</ul></nav>" +
           '<div class="header-actions">' +
             '<div class="lang-toggle" role="group" aria-label="' + tr("Sprache", "Language") + '">' +
               '<button type="button" data-lang="de" aria-pressed="' + (lang === "de") + '">DE</button>' +
               '<button type="button" data-lang="en" aria-pressed="' + (lang === "en") + '">EN</button>' +
             "</div>" +
-            '<a class="btn btn-primary header-cta" href="' + (S.youtubeLiveUrl || S.youtubeUrl) + '" target="_blank" rel="noopener">' + ICONS.play + tr("Live", "Live") + "</a>" +
-            '<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="' + tr("Menü öffnen", "Open menu") + '"><span></span></button>' +
+            '<a class="btn btn-primary btn-sm header-cta" href="give.html">' + tr("Spenden", "Give") + "</a>" +
+            '<a class="btn btn-red btn-sm header-cta" href="' + live + '" target="_blank" rel="noopener">' + ICONS.play + "Live</a>" +
           "</div>" +
-        "</div>";
+        "</div>" +
+        '<nav class="quicknav" aria-label="' + tr("Schnellzugriff", "Quick links") + '"><ul>' +
+          QUICK.map(function (q) {
+            return '<li><a href="' + q.href + '"' + (q.href === here ? ' aria-current="page"' : "") + ">" + QI[q.icon] + "<span>" + tr(q.de, q.en) + "</span></a></li>";
+          }).join("") +
+        "</ul></nav>";
     }
 
     var overlay = document.getElementById("menu-overlay");
@@ -93,21 +147,30 @@
       document.body.appendChild(overlay);
     }
     overlay.innerHTML =
-      '<nav aria-label="' + tr("Menü", "Menu") + '"><ol>' + navLinks(NAV) + "</ol></nav>" +
-      '<div class="menu-foot"><div>' + contactLines() + '</div><div class="socials">' + socialLinks() + "</div></div>";
+      '<div class="menu-backdrop" data-close></div>' +
+      '<div class="menu-panel" role="dialog" aria-modal="true" aria-label="' + tr("Menü", "Menu") + '">' +
+        '<div class="menu-head"><a class="brand" href="index.html">' + brandHtml() + '</a><button class="menu-close" type="button" data-close aria-label="' + tr("Menü schließen", "Close menu") + '">×</button></div>' +
+        '<nav><ol>' + navLinks(NAV) + "</ol></nav>" +
+        '<div class="menu-foot">' +
+          '<a class="btn btn-red" href="' + live + '" target="_blank" rel="noopener">' + ICONS.play + tr("Live ansehen", "Watch live") + "</a>" +
+          "<div>" + contactLines() + "</div>" +
+          '<div class="socials">' + socialLinks() + "</div>" +
+        "</div>" +
+      "</div>";
+    overlay.querySelectorAll("[data-close]").forEach(function (el) { el.addEventListener("click", function () { setMenu(false); }); });
 
     var footer = document.getElementById("site-footer");
     if (footer) {
       var times = (S.services || []).map(function (s) {
-        return "<li>" + pick(s.day) + ", " + s.time + (s.end ? "–" + s.end : "") + tr(" Uhr", "") + "</li>";
+        return "<li>" + pick(s.day) + " " + s.time + " · " + pick(s.title) + "</li>";
       }).join("");
       footer.innerHTML =
         '<div class="container">' +
           '<div class="footer-grid">' +
-            '<div><a class="footer-logo" href="index.html"><img src="assets/img/logo.png" width="764" height="261" alt="Freedom Worship Center"></a>' +
+            '<div><a class="footer-brand" href="index.html">' + brandHtml().replace('alt=""', 'alt="Freedom Worship Center"') + "</a>" +
               "<p>" + contactLines() + "</p>" +
               '<div class="socials">' + socialLinks() + "</div></div>" +
-            "<div><h4>" + tr("Gottesdienste", "Services") + "</h4><ul>" + times + "</ul></div>" +
+            "<div><h4>" + tr("Termine", "Schedule") + "</h4><ul>" + times + "</ul></div>" +
             "<div><h4>" + tr("Entdecken", "Explore") + "</h4><ul>" + navLinks(NAV.slice(1, 5)) + "</ul></div>" +
             "<div><h4>" + tr("Mitmachen", "Get involved") + "</h4><ul>" + navLinks(NAV.slice(5)) + "</ul></div>" +
           "</div>" +
@@ -131,12 +194,67 @@
     document.body.classList.toggle("menu-open", open);
     if (btn) {
       btn.setAttribute("aria-expanded", String(open));
-      btn.setAttribute("aria-label", open ? tr("Menü schließen", "Close menu") : tr("Menü öffnen", "Open menu"));
+      if (!open) btn.focus({ preventScroll: true });
     }
-    if (overlay) overlay.setAttribute("aria-hidden", String(!open));
+    if (overlay) {
+      overlay.setAttribute("aria-hidden", String(!open));
+      if (open) { var c = overlay.querySelector(".menu-close"); if (c) c.focus(); }
+    }
   }
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
-  window.addEventListener("resize", function () { if (window.innerWidth >= 1100) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.body.classList.contains("menu-open")) setMenu(false); });
+
+  /* ---------- Home hero slideshow ---------- */
+  function initHeroSlides() {
+    var wrap = document.querySelector(".hero-slides");
+    if (!wrap) return;
+    var imgs = wrap.querySelectorAll("img");
+    var dots = document.querySelector(".hero-dots");
+    if (imgs.length < 2) { if (imgs[0]) imgs[0].classList.add("is-active"); return; }
+    var i = 0, timer;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (dots) {
+      dots.innerHTML = Array.prototype.map.call(imgs, function (_, n) {
+        return '<button type="button" aria-label="' + tr("Bild ", "Slide ") + (n + 1) + '"' + (n === 0 ? ' aria-current="true"' : "") + "></button>";
+      }).join("");
+      dots.querySelectorAll("button").forEach(function (b, n) { b.addEventListener("click", function () { show(n); restart(); }); });
+    }
+    function show(n) {
+      imgs[i].classList.remove("is-active");
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add("is-active");
+      if (dots) dots.querySelectorAll("button").forEach(function (b, k) { b.setAttribute("aria-current", String(k === i)); });
+    }
+    function restart() { clearInterval(timer); if (!reduce) timer = setInterval(function () { show(i + 1); }, 6500); }
+    imgs[0].classList.add("is-active");
+    restart();
+    document.addEventListener("visibilitychange", function () { if (document.hidden) clearInterval(timer); else restart(); });
+  }
+
+  /* ---------- Carousels ---------- */
+  function initCarousels() {
+    document.querySelectorAll("[data-carousel]").forEach(function (root) {
+      var track = root.querySelector(".carousel-track");
+      var prev = root.querySelector("[data-prev]"), next = root.querySelector("[data-next]");
+      var dotsEl = root.querySelector(".carousel-dots");
+      if (!track) return;
+      function step() { var c = track.children[0]; return c ? c.getBoundingClientRect().width + 16 : 300; }
+      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+      function update() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        if (prev) prev.disabled = track.scrollLeft <= 2;
+        if (next) next.disabled = track.scrollLeft >= max;
+        if (dotsEl) {
+          var n = track.children.length, idx = Math.round(track.scrollLeft / step());
+          if (dotsEl.children.length !== n) dotsEl.innerHTML = new Array(n + 1).join("<span></span>");
+          Array.prototype.forEach.call(dotsEl.children, function (d, k) { d.classList.toggle("on", k === Math.min(idx, n - 1)); });
+        }
+      }
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+    });
+  }
 
   /* ---------- Page translations ---------- */
   var originals = new Map();
@@ -369,5 +487,7 @@
   fillDynamic();
   initReveal();
   initForms();
+  initHeroSlides();
+  initCarousels();
   onScroll();
 })();

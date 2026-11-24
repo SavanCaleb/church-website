@@ -14,6 +14,15 @@ window.SITE = {
   phone: "+49 931 4607608",
   email: "info@freedomworshipcenter.de",
 
+  // Announcement bar at the top of every page. Visitors can close it; changing the title shows it again.
+  // To hide it completely, set: announcement: null,
+  announcement: {
+    title: { de: "Sonntag, 10 Uhr: Gottesdienst", en: "Sunday, 10 am: Service" },
+    text: { de: "Vor Ort in der Ohmstraße 8 oder live auf YouTube.", en: "At Ohmstraße 8 or live on YouTube." },
+    button: { de: "Besuch planen", en: "Plan a visit" },
+    link: "visit.html"
+  },
+
   // Weekly gatherings
   services: [
     { day: { de: "Sonntag", en: "Sunday" }, time: "10:00", title: { de: "Gottesdienst", en: "Sunday Service" }, note: { de: "Anbetung, Wort & Wunder – auf Englisch und Deutsch. Mit Kinderkirche.", en: "Worship, the Word & miracles – in English and German. Kids church included." } },
