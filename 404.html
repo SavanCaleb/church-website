@@ -20,7 +20,11 @@
     <div class="code">404</div>
     <h1>Seite nicht gefunden</h1>
     <p>Diese Seite gibt es nicht (mehr). · This page doesn't exist.</p>
-    <a href="https://savancaleb.github.io/church-website/">Zur Startseite · Home</a>
+    <a id="home" href="/">Zur Startseite · Home</a>
   </main>
+  <script>
+    // On the github.io address the site lives under /church-website/; on the church's own domain it's at /
+    if (location.hostname.endsWith("github.io")) document.getElementById("home").href = "/" + location.pathname.split("/")[1] + "/";
+  </script>
 </body>
 </html>
